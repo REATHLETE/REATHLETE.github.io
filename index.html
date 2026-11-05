@@ -787,17 +787,15 @@
     .why { background: var(--off); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 6rem 3rem; }
     .why-intro { color: var(--muted); font-size: 0.975rem; max-width: 520px; margin-bottom: 3rem; line-height: 1.75; }
     .why-grid {
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 0;
-      border: 1px solid var(--border);
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+      background: var(--border); border: 1px solid var(--border);
     }
     .why-item {
-      padding: 1.75rem; border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      padding: 1.1rem 1.25rem; background: var(--off);
+      display: flex; gap: 0.75rem; align-items: flex-start;
     }
-    .why-item:nth-child(3n) { border-right: none }
-    .why-item:nth-child(7),.why-item:nth-child(8),.why-item:nth-child(9) { border-bottom: none }
-    .why-arrow { color: var(--teal); font-size: 1rem; margin-bottom: 0.5rem; display: block; }
-    .why-item p { font-size: 0.875rem; color: var(--muted); line-height: 1.55; }
+    .why-arrow { color: var(--teal); font-size: 1rem; line-height: 1.55; flex-shrink: 0; }
+    .why-item p { font-size: 0.875rem; color: var(--muted); line-height: 1.55; margin: 0; }
 
     /* ── PLANS ── */
     .plans { background: var(--white); padding: 6rem 3rem; }
@@ -866,8 +864,8 @@
       .plan:last-child { border-bottom: none; }
     }
     @media (max-width: 480px) {
+      .why { padding: 3.5rem 1.25rem; }
       .why-grid { grid-template-columns: 1fr; }
-      .why-item:nth-child(n) { border-right: none; }
     }
   </style>
 </head>
@@ -965,6 +963,9 @@
         <div class="why-item"><span class="why-arrow">→</span><p>Standard physio gave you exercises - not real answers</p></div>
         <div class="why-item"><span class="why-arrow">→</span><p>Motivation is hard when progress feels invisible</p></div>
         <div class="why-item"><span class="why-arrow">→</span><p>Doing this alone and second-guessing everything</p></div>
+        <div class="why-item"><span class="why-arrow">&rarr;</span><p>No clear plan for what to do next week</p></div>
+        <div class="why-item"><span class="why-arrow">&rarr;</span><p>Not sure which exercises actually matter for your sport</p></div>
+        <div class="why-item"><span class="why-arrow">&rarr;</span><p>Told to "just rest" with no clear timeline or milestones</p></div>
       </div>
     </div>
   </section>
@@ -1001,6 +1002,7 @@
 
       <!-- COACHING PLANS -->
       <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 2rem; color: var(--navy); text-align: center;">Monthly Coaching Plans</h3>
+      <p style="text-align:center; color:#5A6A7E; margin-bottom:2rem;">Prefer one-off sessions? Book the calls above, no monthly plan needed.</p>
       <div class="plans-grid">
 
         <div class="plan">
@@ -1010,15 +1012,16 @@
           <div class="plan-per">per month, incl. VAT</div>
           <div class="plan-divider"></div>
           <ul class="plan-features">
-            <li>Free 15-min Intake Call</li>
+            <li>Free 15-min intake call</li>
             <li>Monthly personalised rehab &amp; strength plan</li>
             <li>Monthly plan update</li>
             <li>Baseline strength &amp; capacity testing</li>
             <li>Email support (48-72h response)</li>
           </ul>
           <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid #DDE3EC;">
-            <p style="font-size: 0.85rem; font-weight: 600; color: var(--teal); margin-bottom: 0.5rem;">Add coaching calls at discount:</p>
-            <p style="font-size: 0.85rem; color: #5A6A7E; margin: 0;">30-min: CHF 79 &nbsp; | &nbsp; 1-hour: CHF 130</p>
+            <p style="font-size: 0.95rem; font-weight: 700; color: var(--teal); margin-bottom: 0.6rem;">Extra calls for plan members:</p>
+            <p style="font-size: 1rem; color: inherit; margin: 0; line-height: 1.7;">30 min: <strong>CHF 79</strong> <span style="opacity:0.75;">(standard CHF 99)</span></p>
+            <p style="font-size: 1rem; color: inherit; margin: 0; line-height: 1.7;">1 hour: <strong>CHF 130</strong> <span style="opacity:0.75;">(standard CHF 170)</span></p>
           </div>
           <a href="mailto:hello@reathlete.com?subject=Base Camp" class="plan-cta">Get Started</a>
         </div>
@@ -1030,18 +1033,17 @@
           <div class="plan-per">per month, incl. VAT</div>
           <div class="plan-divider"></div>
           <ul class="plan-features">
-            <li>Free 15-min Intake Call</li>
-            <li>Monthly personalised rehab &amp; strength plan</li>
-            <li>Bi-weekly plan updates</li>
-            <li style="color: var(--teal); font-weight: 600;">✓ 1x 30-min coaching call per month (included)</li>
+            <li style="color: var(--teal); font-weight: 600;">Everything in Base Camp, plus:</li>
+            <li>Bi-weekly plan updates (instead of monthly)</li>
+            <li>1x 30-min coaching call per month (included)</li>
             <li>Video movement feedback</li>
             <li>Return-to-sport testing (every 8-12 weeks)</li>
             <li>WhatsApp / Signal support (72h response)</li>
-            <li>Email support</li>
           </ul>
           <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid #DDE3EC;">
-            <p style="font-size: 0.85rem; font-weight: 600; color: var(--teal); margin-bottom: 0.5rem;">Add extra calls at discount:</p>
-            <p style="font-size: 0.85rem; color: #5A6A7E; margin: 0;">30-min: CHF 79 &nbsp; | &nbsp; 1-hour: CHF 130</p>
+            <p style="font-size: 0.95rem; font-weight: 700; color: var(--teal); margin-bottom: 0.6rem;">Extra calls for plan members:</p>
+            <p style="font-size: 1rem; color: #F8F6F2; margin: 0; line-height: 1.7;">30 min: <strong>CHF 79</strong> <span style="opacity:0.75;">(standard CHF 99)</span></p>
+            <p style="font-size: 1rem; color: #F8F6F2; margin: 0; line-height: 1.7;">1 hour: <strong>CHF 130</strong> <span style="opacity:0.75;">(standard CHF 170)</span></p>
           </div>
           <a href="mailto:hello@reathlete.com?subject=Ridgeline" class="plan-cta">Get Started</a>
         </div>
@@ -1053,19 +1055,17 @@
           <div class="plan-per">per month, incl. VAT</div>
           <div class="plan-divider"></div>
           <ul class="plan-features">
-            <li>Free 15-min Intake Call</li>
-            <li>Monthly personalised rehab &amp; strength plan</li>
+            <li style="color: var(--teal); font-weight: 600;">Everything in Ridgeline, plus:</li>
             <li>Weekly plan updates</li>
-            <li style="color: var(--teal); font-weight: 600;">✓ 2x 30-min coaching calls per month (included)</li>
-            <li>Video movement feedback</li>
-            <li>Sport-specific return-to-sport testing (8-12 weeks)</li>
+            <li>2x 30-min coaching calls per month (included)</li>
             <li>WhatsApp / Signal support (24/7 response)</li>
             <li>Mental return-to-sport coaching</li>
             <li>Nutrition &amp; recovery protocols</li>
           </ul>
           <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid #DDE3EC;">
-            <p style="font-size: 0.85rem; font-weight: 600; color: var(--teal); margin-bottom: 0.5rem;">Add extra calls at discount:</p>
-            <p style="font-size: 0.85rem; color: #5A6A7E; margin: 0;">30-min: CHF 59 &nbsp; | &nbsp; 1-hour: CHF 110</p>
+            <p style="font-size: 0.95rem; font-weight: 700; color: var(--teal); margin-bottom: 0.6rem;">Extra calls for plan members:</p>
+            <p style="font-size: 1rem; color: inherit; margin: 0; line-height: 1.7;">30 min: <strong>CHF 59</strong> <span style="opacity:0.75;">(standard CHF 99)</span></p>
+            <p style="font-size: 1rem; color: inherit; margin: 0; line-height: 1.7;">1 hour: <strong>CHF 110</strong> <span style="opacity:0.75;">(standard CHF 170)</span></p>
           </div>
           <a href="mailto:hello@reathlete.com?subject=Summit" class="plan-cta">Get Started</a>
         </div>
